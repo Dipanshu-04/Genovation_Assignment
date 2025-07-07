@@ -33,7 +33,7 @@ Access Docs at :
 
 http://127.0.0.1:8000/docs
 
-### Curl Commands
+### cURL Commands
 **1. Login** 
 
 ```bash
