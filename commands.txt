@@ -2,4 +2,4 @@ curl -X POST "http://127.0.0.1:8000/login" -H "Content-Type: application/json" -
 
 curl -X POST http://127.0.0.1:8000/prompt -H "Content-Type: application/json" -H "Authorization: Bearer " -d "{\"prompt\": \"Hello, FastAPI!\"}"
 
-curl -X GET http://127.0.0.1:8000/history/ -H "Authorization: Bearer "
+curl -X GET http://127.0.0.1:8000/history -H "Authorization: Bearer "

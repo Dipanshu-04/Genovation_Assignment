@@ -24,7 +24,7 @@ def save_history():
     with open(HISTORY_FILE, "w") as f:
         json.dump(user_history, f, indent=2)
 
-
+#Login Route
 @app.post("/login")
 def login(user: UserLogin):
     stored_pw = users_db.get(user.username)
@@ -33,13 +33,14 @@ def login(user: UserLogin):
     token = create_token(user.username)
     return {"token": token}
 
+#token authorization
 def get_current_user(authorization: str = Header(...)):
     if not authorization.startswith("Bearer "):
         raise HTTPException(status_code=401, detail="Invalid authorization header")
     token = authorization.split(" ")[1]
     return decode_token(token)
 
-
+#Prompt Route
 @app.post("/prompt")
 def submit_prompt(request: PromptRequest, username: str = Depends(get_current_user)):
     # Dummy response
@@ -58,8 +59,8 @@ def submit_prompt(request: PromptRequest, username: str = Depends(get_current_us
     save_history()
 
     return {"response": response}
-
-@app.get("/history/")
+#History Route
+@app.get("/history")
 def get_history(username: str = Depends(get_current_user)):
     return user_history.get(username, [])
 
