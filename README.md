@@ -39,7 +39,7 @@ http://127.0.0.1:8000/docs
 ```bash
 curl -X POST http://127.0.0.1:8000/login \
   -H "Content-Type: application/json" \
-  -d '{"username": "<username>", "password": "<password>"}'
+  -d "{\"username\": \"<username>\", \"password\": \"<password>\"}"
 
 ```
 
@@ -58,7 +58,7 @@ curl -X POST http://127.0.0.1:8000/login \
 curl -X POST http://127.0.0.1:8000/prompt \
   -H "Content-Type: application/json" \
   -H "Authorization: Bearer <your_access_token>" \
-  -d '{"prompt": "Tell me a joke"}'
+  -d "{\"prompt\": \"Tell me a joke\"}"
 ```
 
 **Response**
