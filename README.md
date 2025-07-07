@@ -39,7 +39,7 @@ http://127.0.0.1:8000/docs
 ```bash
 curl -X POST http://127.0.0.1:8000/login \
   -H "Content-Type: application/json" \
-  -d '{"username": "user1", "password": "abcd"}'
+  -d '{"username": "<username>", "password": "<password>"}'
 
 ```
 
@@ -47,7 +47,7 @@ curl -X POST http://127.0.0.1:8000/login \
 
 ```bash
 {
-  "access_token": "abcd1234efgh..."
+  "access_token": "<your_access_token>"
   }
 
 ```
@@ -57,7 +57,7 @@ curl -X POST http://127.0.0.1:8000/login \
 ```bash
 curl -X POST http://127.0.0.1:8000/prompt \
   -H "Content-Type: application/json" \
-  -H "Authorization: Bearer abcd1234efgh..." \
+  -H "Authorization: Bearer <your_access_token>" \
   -d '{"prompt": "Tell me a joke"}'
 ```
 
@@ -73,7 +73,7 @@ curl -X POST http://127.0.0.1:8000/prompt \
 
 ```bash
 curl -X GET http://127.0.0.1:8000/history/ \
-  -H "Authorization: Bearer abcd1234efgh..."
+  -H "Authorization: Bearer <your_access_token>"
 ```
 
 ```bash
