@@ -75,6 +75,7 @@ curl -X POST http://127.0.0.1:8000/prompt \
 curl -X GET http://127.0.0.1:8000/history/ \
   -H "Authorization: Bearer <your_access_token>"
 ```
+**Response**
 
 ```bash
 {
