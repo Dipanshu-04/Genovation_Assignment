@@ -1,0 +1,6 @@
+# Ignore all JSON files
+*.json
+
+# Ignore python environment
+projenv/
+__pycache__/
